@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+
+
+<div class="bodyy">
+
+    <div class="result">
+    <h5 id="typewriter" align="center"> <%= subject %> </h5>
+        <p><%= gptanswer %></p>
+        </div>
+    
+
+    <div class="main">
+        <form action="/" method="POST">
+            
+            
+            
+            <!-- wHAT TO wRIEY -->
+            <div name="what_to_write" class="wtw">
+                <!-- <div onclick="Colorchange_email()" id="Email">EMAIL</div>
+    or
+    <div onclick="Colorchange_letter()" id="Letter">LETTER</div> -->
+    <label>
+        EMAIL
+        <input required type="radio" name="whattowrite" value="Email">
+    </label>
+    <label>
+        LETTER
+        <input required type="radio" name="whattowrite" value="Letter">
+    </label>
+    
+    
+    
+</div>
+
+
+<!-- TONE OF APPLICATION -->
+<select  class="Typeofapp" name="tone_of_application" required>
+    <option value="">SELECT TONE</option>
+    <option value="Formal">Formal</option>
+    <option value="Informal">Informal</option>
+    <option value="Professional">Professional</option>
+    <option value="Humorus">Humorus</option>
+</select>
+
+
+<!-- To whome -->
+
+<div class="To_Whome">
+    <input type="text" placeholder="To The Principal.." name="to_whome" required>
+</div>
+
+<!-- Subject Line -->
+
+<div class="subjectline">
+        <textarea name="sub_line" id=""
+        placeholder=" Example: For leave application for 5 days as i am going to attend weddin ceremony" required></textarea>
+    </div>
+    
+    
+    
+    
+    
+    <!-- SUBMIT BUTTON -->
+    <button class="submit_button" type="submit" id="submit">GENERATE APPLICATION</button>
+    
+    
+</form>
+
+
+    
+</div>
+
+
+
+
+</div>
+
+
+
+
+</body>
+</html>
