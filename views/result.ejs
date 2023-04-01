@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write.AI</title>
+    <link rel="stylesheet" href="css/result.css">
+</head>
+<body>
+    
+
+    <div class="main">
+
+        <div class="result">
+            
+            <h5 id="typewriter" align="center"> 
+                <%= subject %>
+            </h5>
+            <p id="mainresult">
+                <%= gptanswer %>    
+            </p>
+    
+    <!-- Button To Modify -->
+    <!-- Copy -->
+    <button onclick="copythetext()" class="funbut" id="copy">copy</button>
+    
+    <!-- edit -->
+    <button onclick="contenteditable()" class="funbut" id="edit">edit</button>
+    
+        </div>
+        
+        
+    
+    <!-- Regenerate -->
+    <div class="regen">
+        <p>didn't like it ?</p>
+        <button> <a href="/">Write Again</a></button>
+    </div>
+    
+    
+    </div>
+        <script>
+            // Copy button 
+let copybutton = document.getElementById("copy");
+
+// Edit button
+let editbutton = document.getElementById("edit");
+
+
+// Result P Tag
+let mainresult = document.getElementById("mainresult");
+
+// text content of mainresult
+let textTocopy = mainresult.textContent
+
+
+// Making Content Editable toggle
+function contenteditable() {
+    mainresult.contentEditable = mainresult.contentEditable === "true" ? "false" : "true";
+
+    editbutton.innerHTML = editbutton.innerHTML === "done" ? "edit" : "done";
+}
+
+
+// Making copy function
+function copythetext() {
+    navigator.clipboard.writeText(textTocopy)
+    
+    setTimeout(function(){
+        copybutton.innerHTML = "copied" 
+    },100)
+    setTimeout(function(){
+        copybutton.innerHTML="copy"
+    },4000)
+}
+        </script>
+
+</body>
+</html>

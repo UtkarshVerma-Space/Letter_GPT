@@ -1,45 +1,33 @@
-const email = document.getElementById("Email")
-const letter = document.getElementById("Letter")
+// Copy button 
+let copybutton = document.getElementById("copy");
 
-const whatselected = document.getElementById("submit")
-
-function Colorchange_email() {
-    email.style.backgroundColor = "rgb(76, 164, 117)";
-    email.style.color="white";
-
-    
-    letter.style.backgroundColor = "white"
-    letter.style.color="black";
-
- whatselected.innerHTML="GENERATE EMAIL"
+// Edit button
+let editbutton = document.getElementById("edit");
 
 
+// Result P Tag
+let mainresult = document.getElementById("mainresult");
+
+// text content of mainresult
+let textTocopy = mainresult.textContent
+
+
+// Making Content Editable toggle
+function contenteditable() {
+    mainresult.contentEditable = mainresult.contentEditable === "true" ? "false" : "true";
+
+    editbutton.innerHTML = editbutton.innerHTML === "done" ? "edit" : "done";
 }
 
 
-function Colorchange_letter() {
-    letter.style.backgroundColor = "rgb(76, 164, 117)";
-    letter.style.color="white";
-
-
-    email.style.backgroundColor = "white"
-    email.style.color="black";
-
- whatselected.innerHTML="GENERATE APPLICATION"
-
-
-}
-
-
-
-
-
-// Word limit
-const wordcount = document.getElementById("limit")
-const whatisword_count = wordcount.value
-const word = document.getElementById("words")
-
-// for (let i = whatisword_count; ; ) {
+// Making copy function
+function copythetext() {
+    navigator.clipboard.writeText(textTocopy)
     
-//     // word.innerHTML=whatisword_count
-// }
+    setTimeout(function(){
+        copybutton.innerHTML = "copied" 
+    },100)
+    setTimeout(function(){
+        copybutton.innerHTML="copy"
+    },4000)
+}
